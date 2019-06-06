@@ -1,7 +1,10 @@
 - name: Check endpoint
-  hosts: localhost
   tasks:
     - name: Check url
       uri:
         url: http://localhost:8080/datacatalog/hello
+        status: 200
+    - name: Check url 2
+      uri:
+        url: http://localhost:8080/datacatalog/hello2
         status: 200
