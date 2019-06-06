@@ -4,3 +4,4 @@
     - name: Check url
       uri:
         url: http://localhost:8080/catalog/v1/hello
+        status: 200
