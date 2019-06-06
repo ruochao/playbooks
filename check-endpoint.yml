@@ -1,5 +1,5 @@
 - name: Check endpoint
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Check url
       uri:
