@@ -1,11 +1,12 @@
 - name: Check endpoint
   hosts: localhost
+  gather_facts: no
   connection: local
   tasks:
     - name: Check url
       uri:
         url: http://localhost:8080/datacatalog/hello
-        status: 200
+        status: -1
     - name: Check url 2
       uri:
         url: http://localhost:8080/datacatalog/hello2
