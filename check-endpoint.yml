@@ -3,6 +3,8 @@
   gather_facts: no
   connection: local
   tasks:
+    - name: Wait for app started
+      wait_for: 8080
     - name: Check url
       uri:
         url: http://localhost:8080/datacatalog/hello2
