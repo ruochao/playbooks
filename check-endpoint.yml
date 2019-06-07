@@ -5,10 +5,10 @@
   tasks:
     - name: Check url
       uri:
-        url: http://localhost:8080/datacatalog/hello
-        status: -1
+        url: http://localhost:8080/datacatalog/hello2
+        status: 404
     - name: Check url 2
       uri:
-        url: http://localhost:8080/datacatalog/hello2
+        url: http://localhost:8080/datacatalog/hello
         status: 200
         
