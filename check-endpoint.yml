@@ -3,14 +3,12 @@
   gather_facts: no
   connection: local
   tasks:
-    - name: Wait for app started
-      wait_for: port=8080
     - name: Check url
       uri:
-        url: http://localhost:8080/datacatalog/hello2
+        url: http://172.30.197.156:8080/datacatalog/hello2
         status_code: 404
     - name: Check url 2
       uri:
-        url: http://localhost:8080/datacatalog/hello
+        url: http://172.30.197.156:8080/datacatalog/hello
         status_code: 200
         
