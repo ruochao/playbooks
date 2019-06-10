@@ -2,9 +2,8 @@
   hosts: all
   tasks:
     - name: Install http and php etc
-      yum: name={{ item }} state=present
-      with_items:
-      - httpd
+      yum: name=['httpd'] state=present
+      become: true
 
     - name: Start Apache
       service: name=httpd state=started enabled=yes
