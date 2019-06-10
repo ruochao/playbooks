@@ -2,7 +2,7 @@
   hosts: all
   tasks:
     - name: Install http and php etc
-      yum: name=['httpd'] state=present
+      yum: name=httpd state=present
       become: true
 
     - name: Start Apache
