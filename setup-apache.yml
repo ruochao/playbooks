@@ -8,6 +8,7 @@
       unarchive:
         src: ~/apache-tomcat-7.0.61.tar.gz
         dest: ~/
+        remote_src: true
 
     - name: Start Tomcat
       service: name=tomcat state=started enabled=yes
