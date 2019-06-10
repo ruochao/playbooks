@@ -7,3 +7,4 @@
 
     - name: Start Apache
       service: name=httpd state=started enabled=yes
+      become: true
