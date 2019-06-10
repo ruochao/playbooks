@@ -1,17 +1,10 @@
-- name: create tomcat server
+- name: create apache server
   hosts: all
   tasks:
-    - name: Download Tomcat
-      get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz dest=~/apache-tomcat-7.0.61.tar.gz
+    - name: Install http and php etc
+      yum: name={{ item }} state=present
+      with_items:
+      - httpd
 
-    - name: Extract archive
-      unarchive:
-        src: ~/apache-tomcat-7.0.61.tar.gz
-        dest: ~/
-        remote_src: true
-
-    - name: Start Tomcat
-      service: name=tomcat state=started enabled=yes
-
-    - name: wait for tomcat to start
-      wait_for: port=8080
+    - name: Start Apache
+      service: name=httpd state=started enabled=yes
