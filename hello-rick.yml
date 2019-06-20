@@ -1,6 +1,8 @@
 - name: Hello Rick Test
-  hosts: all
+  hosts: localhost
+  gather_facts: no
+  connection: local
   tasks:
     - name: Hello Message
       debug:
-        msg: "Hello Rick!"
+        msg: "Hello {{user_name}}!"
